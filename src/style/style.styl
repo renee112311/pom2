@@ -1,4 +1,91 @@
+html,body
+  height 100vh
+
+.container
+  background #E7E4DB
+  text-align center
+  width 60%
+  height 100%
+  display flex
+  justify-content center
+  align-items center
+
 #app
   font-family var(--font-family-sans-serif),"Noto Sans TC"
+  width 80%
+  height 100%
+  position relative
+
+  #nav
+    width 100%
+    height 5%
+    display flex
+    position absolute
+    bottom 0
+    justify-content space-evenly
+
   table
-    table-layout: fixed
+    table-layout fixed
+
+  a
+    display block
+    text-decoration none
+    color #093830
+    width 33.3333%
+    border-right 1px solid #333
+    line-height 36.11px
+  a:active
+    background rgba(9, 93, 79, 0.61)
+    color #fff
+  a:last-of-type
+    border none
+
+#home
+  padding-top 1rem 
+  width 100%
+  height 90%
+  display flex
+  flex-direction column
+
+  .btn
+    width 80px
+    height 80px
+    border-radius 50%
+    // background none
+
+  #elcom
+    width 50%
+    height 60%
+    display flex
+    justify-content center
+    align-items center
+    margin 0 auto 
+
+
+#list
+  width 100%
+  height 90%
+  overflow hidden
+  position relative
+  #listIn
+    width 100%
+    height 100%
+    overflow-y scroll
+    position absolute
+    right -17px
+    top 0
+
+
+#settings
+  width 100%
+  height 90%
+  overflow hidden
+  position relative
+  #settingsIn
+    width 100%
+    height 100%
+    overflow-y scroll
+    position absolute
+    right -17px
+    top 0
+

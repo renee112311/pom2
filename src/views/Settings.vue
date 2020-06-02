@@ -1,14 +1,17 @@
 <template>
   <div id="settings">
-    <b-table :items="items" :fields="fields" @row-clicked="selectAlarm">
-      <template v-slot:cell(preview)="data">
-        <audio controls :src="'./alarms/'+data.item.file"></audio>
-      </template>
-      <template v-slot:cell(select)="data">
-        <font-awesome-icon v-if="data.item.file==alarm" :icon="['fas','check']"></font-awesome-icon>
-      </template>
+    <div id="settingsIn">
+      <b-table :items="items" :fields="fields" @row-clicked="selectAlarm">
+        <template v-slot:cell(preview)="data">
+          <audio controls :src="'./alarms/'+data.item.file"></audio>
+        </template>
+        <template v-slot:cell(select)="data">
+          <font-awesome-icon v-if="data.item.file==alarm" :icon="['fas','check']"></font-awesome-icon>
+        </template>
 
-    </b-table>
+      </b-table>
+    </div>
+
   </div>
 </template>
 

@@ -2,20 +2,36 @@
   <div id="home">
     <h1>{{currentText}}</h1>
     <h2>{{timetext}}</h2>
-    <b-btn variant="primary" v-if="status !==1" @click="start">
-      <font-awesome-icon :icon="['fas','play']"></font-awesome-icon>
-    </b-btn>
-    <b-btn variant="warning" v-if="status==1" @click="pause">
-      <font-awesome-icon :icon="['fas','pause']"></font-awesome-icon>
-    </b-btn>
-    <b-btn variant="danger" v-if="current.length > 0 || todos.legth > 0" @click="finish(true)">
-      <font-awesome-icon :icon="['fas','step-forward']"></font-awesome-icon>
-    </b-btn>
+    <div id="elcom">
+      <NEllipse></NEllipse>
+    </div>
+
+    <b-row>
+      <b-col>
+        <b-btn variant="light"  v-if="status !==1" @click="start">
+          <font-awesome-icon :icon="['fas','play']"></font-awesome-icon>
+        </b-btn>
+        <b-btn  variant="light"  v-if="status==1" @click="pause">
+          <font-awesome-icon :icon="['fas','pause']"></font-awesome-icon>
+        </b-btn>
+      </b-col>
+      <b-col>
+        <b-btn variant="secondary" v-if="current.length > 0 || todos.legth > 0" @click="finish(true)">
+          <font-awesome-icon :icon="['fas','step-forward']"></font-awesome-icon>
+        </b-btn>
+        <b-btn variant="secondary" v-else disabled>
+          <font-awesome-icon :icon="['fas','step-forward']"></font-awesome-icon>
+        </b-btn>
+      </b-col>
+    </b-row>
+
   </div>
 </template>
 
 <script>
+import NEllipse from '../components/NEllipse.vue'
 export default {
+  name: 'home',
   data () {
     return {
       // 0 = 停止
@@ -106,6 +122,9 @@ export default {
       clearInterval(this.timer)
       this.status = 2
     }
+  },
+  components: {
+    NEllipse
   }
 }
 </script>
