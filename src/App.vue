@@ -9,10 +9,7 @@
 
     </div>
     <keep-alive>
-      <vue-page-transition>
         <router-view/>
-      </vue-page-transition>
-
     </keep-alive>
 
   </div>

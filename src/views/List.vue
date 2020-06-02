@@ -14,7 +14,7 @@
           </b-tr>
           <b-tr v-else v-for="(todo,index) in todos" :key="index" >
             <b-td>
-              <b-form-input v-model="todo.model" v-if="todo.edit" @blur="saveTodo(index)">
+              <b-form-input v-model="todo.model" v-if="todo.edit" @blur="setTimeout(function() {blurTodo(index)},200)">
               </b-form-input>
               <!-- 取消編輯 -->
               <b-btn variant="link" class="text-danger" v-if="todo.edit" @click="cancelTodo(index)">
@@ -74,9 +74,10 @@ export default {
       this.$store.commit('saveTodo', index)
     },
     blurTodo (index) {
-      if (event.target.tagName !== 'BUTTON') {
+      if (event.target.tagName === 'BUTTON') {
         alert(event.target.tagName)
       } else {
+        alert(event.target.tagName)
         this.$store.commit('saveTodo', index)
       }
     }

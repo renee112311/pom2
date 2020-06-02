@@ -21,8 +21,7 @@ import 'noto-sans-tc/noto_sans_tc_regular/css.css'
 import VueEllipseProgress from 'vue-ellipse-progress'
 
 // import VuePageTransition from 'vue-page-transition'
-
-import VueAnalytics from 'vue-analytics'
+import VueGtag from 'vue-gtag'
 
 library.add(faCheck, faPen, faTimes, faUndo, faSave, faPlay, faPause, faStepForward)
 
@@ -37,8 +36,8 @@ Vue.use(VueEllipseProgress)
 
 // Vue.use(VuePageTransition)
 
-Vue.use(VueAnalytics, {
-  id: 'UA-168203638-1'
+Vue.use(VueGtag, {
+  config: { id: 'UA-168203638-1' }
 })
 
 new Vue({
