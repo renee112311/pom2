@@ -1,24 +1,3 @@
-# pom
+# 我的蕃茄鐘
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+* 新增「已完成」頁面，可以把完成的工作呼叫回待辦清單。
