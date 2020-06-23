@@ -18,7 +18,15 @@ const routes = [
     name: 'List',
     component: () => import(/* webpackChunkName: "list" */ '../views/List.vue'),
     meta: {
-      title: '蕃茄鐘 | 清單'
+      title: '蕃茄鐘 | 待辦清單'
+    }
+  },
+  {
+    path: '/done',
+    name: 'Done',
+    component: () => import(/* webpackChunkName: "done" */ '../views/Done.vue'),
+    meta: {
+      title: '蕃茄鐘 | 已完成'
     }
   },
   {

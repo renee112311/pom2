@@ -1,8 +1,9 @@
 <template>
   <div id="list">
     <div id="listIn">
+      <h2 class="my-2">待辦清單</h2>
       <b-form-input @keydown.enter="addTodo" v-model="newtodo" ></b-form-input>
-      <b-btn variant="success" @click="addTodo">新增</b-btn>
+      <b-btn variant="dark" @click="addTodo" style="display:block;width:100%">新增</b-btn>
       <b-table-simple>
         <b-tr>
           <b-th>事項</b-th>
@@ -14,7 +15,7 @@
           </b-tr>
           <b-tr v-else v-for="(todo,index) in todos" :key="index" >
             <b-td>
-              <b-form-input v-model="todo.model" v-if="todo.edit" @blur="setTimeout(function() {blurTodo(index)},200)">
+              <b-form-input v-model="todo.model" v-if="todo.edit">
               </b-form-input>
               <!-- 取消編輯 -->
               <b-btn variant="link" class="text-danger" v-if="todo.edit" @click="cancelTodo(index)">
@@ -58,8 +59,10 @@ export default {
   },
   methods: {
     addTodo () {
-      this.$store.commit('addTodo', this.newtodo)
-      this.newtodo = ''
+      if (this.newtodo.length > 0) {
+        this.$store.commit('addTodo', this.newtodo)
+        this.newtodo = ''
+      }
     },
     delTodo (index) {
       this.$store.commit('delTodo', index)
@@ -72,14 +75,6 @@ export default {
     },
     saveTodo (index) {
       this.$store.commit('saveTodo', index)
-    },
-    blurTodo (index) {
-      if (event.target.tagName === 'BUTTON') {
-        alert(event.target.tagName)
-      } else {
-        alert(event.target.tagName)
-        this.$store.commit('saveTodo', index)
-      }
     }
   },
   computed: {
