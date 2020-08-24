@@ -109,11 +109,6 @@ export default {
       } else {
         setTimeout(() => {
           alert('時間到，事情都完成了嗎？')
-          // Swal.fire(
-          //   'Good job!',
-          //   'You clicked the button!',
-          //   'success'
-          // )
         }, 10)
       }
     },
